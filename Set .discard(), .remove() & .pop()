@@ -1,0 +1,24 @@
+'''python code'''
+
+n = int(input())
+s = set(map(int, input().split()))
+
+command = int(input())
+
+for i in range(command):
+    
+    fn = input()
+    if('pop'==fn):
+        s.pop()
+        continue
+
+    lst = list(fn)
+    num = int(lst[-1])
+    func=''.join(lst[0:-2])
+    if('remove'==func):
+        s.remove(num)
+    if('discard'==func):
+        s.discard(num)
+   
+    
+print(sum(s))
